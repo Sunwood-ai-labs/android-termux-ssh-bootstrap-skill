@@ -1,0 +1,7 @@
+interface:
+  display_name: "Android Termux SSH Bootstrap"
+  short_description: "Set up Termux SSH from a fresh Android device"
+  icon_small: "./assets/icon.svg"
+  icon_large: "./assets/icon.svg"
+  brand_color: "#0a7ea4"
+  default_prompt: "Use $android-termux-ssh-bootstrap to get a fresh Android device to a usable Termux SSH shell from Windows."
