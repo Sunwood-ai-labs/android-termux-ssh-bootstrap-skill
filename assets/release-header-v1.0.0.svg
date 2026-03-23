@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Android Termux SSH Bootstrap v1.0.0 release header</title>
+  <desc id="desc">Release header for version 1.0.0 featuring the Android Termux SSH Bootstrap icon, version badge, and Windows to Termux-over-SSH messaging.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#08111d"/>
+      <stop offset="52%" stop-color="#12324a"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#0b1220" stop-opacity="0.86"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#020617" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="1380" cy="124" r="180" fill="#38bdf8" fill-opacity="0.07"/>
+  <circle cx="150" cy="782" r="220" fill="#22c55e" fill-opacity="0.08"/>
+  <circle cx="1260" cy="760" r="260" fill="#38bdf8" fill-opacity="0.05"/>
+
+  <g filter="url(#shadow)">
+    <rect x="92" y="100" width="1416" height="700" rx="40" fill="url(#panel)" stroke="#7dd3fc" stroke-opacity="0.18"/>
+  </g>
+
+  <g transform="translate(160 190)">
+    <rect x="0" y="0" width="332" height="500" rx="56" fill="#e2e8f0"/>
+    <rect x="28" y="38" width="276" height="404" rx="34" fill="#0b1220"/>
+    <circle cx="166" cy="468" r="18" fill="#64748b"/>
+    <path d="M78 196l52 52-52 52" fill="none" stroke="#38bdf8" stroke-linecap="round" stroke-linejoin="round" stroke-width="28"/>
+    <path d="M162 300h86" fill="none" stroke="#22c55e" stroke-linecap="round" stroke-width="28"/>
+    <path d="M410 176c28-26 74-26 100 0l30 30c26 28 26 74 0 100l-34 34" fill="none" stroke="url(#accent)" stroke-linecap="round" stroke-width="34"/>
+    <path d="M444 430c-28 26-74 26-100 0l-30-30c-26-28-26-74 0-100l34-34" fill="none" stroke="url(#accent)" stroke-linecap="round" stroke-width="34"/>
+    <path d="M378 302h150" fill="none" stroke="#f8fafc" stroke-linecap="round" stroke-width="26"/>
+  </g>
+
+  <g transform="translate(700 196)">
+    <rect x="0" y="0" width="196" height="48" rx="24" fill="#082f49"/>
+    <text x="28" y="32" fill="#7dd3fc" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Initial Release</text>
+
+    <rect x="218" y="0" width="172" height="48" rx="24" fill="#052e16"/>
+    <text x="248" y="32" fill="#86efac" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">v1.0.0</text>
+
+    <text x="0" y="118" fill="#e2e8f0" font-size="34" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Codex Skill Release</text>
+    <text x="0" y="216" fill="#f8fafc" font-size="82" font-family="Segoe UI, Arial, sans-serif" font-weight="800">Android Termux</text>
+    <text x="0" y="314" fill="#f8fafc" font-size="82" font-family="Segoe UI, Arial, sans-serif" font-weight="800">SSH Bootstrap</text>
+
+    <text x="0" y="394" fill="#cbd5e1" font-size="32" font-family="Segoe UI, Arial, sans-serif">
+      Windows to Termux-over-SSH with ADB, GitHub Termux,
+    </text>
+    <text x="0" y="442" fill="#cbd5e1" font-size="32" font-family="Segoe UI, Arial, sans-serif">
+      runtime validation, and OEM-aware fallback guidance.
+    </text>
+
+    <rect x="0" y="510" width="286" height="60" rx="30" fill="#0b2440"/>
+    <text x="28" y="549" fill="#93c5fd" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">ADB + USB + SSH</text>
+
+    <rect x="310" y="510" width="364" height="60" rx="30" fill="#0b2d1d"/>
+    <text x="338" y="549" fill="#86efac" font-size="28" font-family="Segoe UI, Arial, sans-serif" font-weight="700">GitHub Termux Build Path</text>
+
+    <text x="0" y="646" fill="#94a3b8" font-size="24" font-family="Segoe UI, Arial, sans-serif">
+      README-first public skill repo with validation and governance surfaces
+    </text>
+  </g>
+</svg>
