@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Android Termux SSH Bootstrap</title>
+  <desc id="desc">Social card for the Android Termux SSH Bootstrap skill repository.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#12324a"/>
+      <stop offset="100%" stop-color="#14532d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" rx="40" fill="url(#bg)"/>
+  <g transform="translate(96 135)">
+    <rect x="0" y="0" width="220" height="360" rx="32" fill="#e2e8f0"/>
+    <rect x="18" y="28" width="184" height="286" rx="22" fill="#0b1220"/>
+    <circle cx="110" cy="332" r="14" fill="#64748b"/>
+    <path d="M54 132l34 34-34 34" fill="none" stroke="#38bdf8" stroke-linecap="round" stroke-linejoin="round" stroke-width="18"/>
+    <path d="M112 200h58" fill="none" stroke="#22c55e" stroke-linecap="round" stroke-width="18"/>
+    <path d="M256 118c21-20 56-20 76 0l26 26c20 21 20 56 0 76l-34 34" fill="none" stroke="url(#accent)" stroke-linecap="round" stroke-width="22"/>
+    <path d="M284 304c-21 20-56 20-76 0l-26-26c-20-21-20-56 0-76l34-34" fill="none" stroke="url(#accent)" stroke-linecap="round" stroke-width="22"/>
+    <path d="M240 211h112" fill="none" stroke="#f8fafc" stroke-linecap="round" stroke-width="18"/>
+  </g>
+  <g transform="translate(430 150)">
+    <text x="0" y="0" fill="#e2e8f0" font-size="30" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Codex Skill</text>
+    <text x="0" y="94" fill="#f8fafc" font-size="64" font-family="Segoe UI, Arial, sans-serif" font-weight="800">Android Termux</text>
+    <text x="0" y="174" fill="#f8fafc" font-size="64" font-family="Segoe UI, Arial, sans-serif" font-weight="800">SSH Bootstrap</text>
+    <text x="0" y="256" fill="#cbd5e1" font-size="30" font-family="Segoe UI, Arial, sans-serif">
+      Fresh Android to real Termux-over-SSH from Windows
+    </text>
+    <rect x="0" y="318" width="252" height="52" rx="26" fill="#082f49"/>
+    <text x="26" y="352" fill="#7dd3fc" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">ADB + GitHub Termux</text>
+    <rect x="274" y="318" width="214" height="52" rx="26" fill="#052e16"/>
+    <text x="300" y="352" fill="#86efac" font-size="24" font-family="Segoe UI, Arial, sans-serif" font-weight="700">USB SSH Flow</text>
+  </g>
+</svg>

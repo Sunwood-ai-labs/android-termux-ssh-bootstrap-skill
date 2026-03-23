@@ -19,6 +19,8 @@ $requiredFiles = @(
     ".editorconfig",
     "agents/openai.yaml",
     "assets/icon.svg",
+    "assets/android-termux-ssh-bootstrap.svg",
+    "assets/social-card.svg",
     ".github/CODEOWNERS",
     ".github/ISSUE_TEMPLATE/config.yml",
     ".github/pull_request_template.md",
@@ -49,7 +51,7 @@ if ($yaml -notmatch 'display_name:\s+"Android Termux SSH Bootstrap"') {
     Write-Error "agents/openai.yaml display_name is missing or wrong."
 }
 
-if ($yaml -notmatch 'icon_small:\s+"\./assets/icon\.svg"' -or $yaml -notmatch 'icon_large:\s+"\./assets/icon\.svg"') {
+if ($yaml -notmatch 'icon_small:\s+"\./assets/icon\.svg"' -or $yaml -notmatch 'icon_large:\s+"\./assets/android-termux-ssh-bootstrap\.svg"') {
     Write-Error "agents/openai.yaml icon references are missing or wrong."
 }
 

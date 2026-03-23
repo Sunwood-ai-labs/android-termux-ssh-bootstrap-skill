@@ -25,17 +25,17 @@ Codex skill for taking a fresh Android device to a usable Termux SSH shell from 
 
 ## Overview
 
-This repository packages a reusable Codex skill, `android-termux-ssh-bootstrap`, for a specific operational path:
+This repository packages a reusable Codex skill, `android-termux-ssh-bootstrap`, for one narrow but painful workflow:
 
 - prepare ADB on Windows
 - install the official GitHub Termux build
 - handle Xiaomi / HyperOS install restrictions
-- use `run-as com.termux` on the debuggable GitHub build
+- use `run-as com.termux` on the debuggable GitHub build when available
 - install `openssh`
 - configure public-key authentication
 - connect to Termux over `ssh` through `adb forward`
 
-The repository stays README-centric on purpose. The workflow is linear and operational, so a strong `SKILL.md` plus repository validation is a better fit than a separate docs UI.
+The repository is intentionally README-centric. This workflow is linear and operational, so a strong skill file plus clear validation is a better fit than a docs site.
 
 ## Quick Start
 
@@ -58,6 +58,14 @@ adb forward tcp:8022 tcp:8022
 ssh -o IdentitiesOnly=yes -i <private_key_path> -p 8022 <termux_user>@127.0.0.1
 ```
 
+## Repository Name vs Skill Name
+
+- Repository name: `android-termux-ssh-bootstrap-skill`
+- Skill name: `android-termux-ssh-bootstrap`
+- Invocation name: `$android-termux-ssh-bootstrap`
+
+The repository name is for GitHub distribution. The `$skill` name is what Codex uses when you invoke the skill.
+
 ## Repository Layout
 
 ```text
@@ -70,10 +78,14 @@ ssh -o IdentitiesOnly=yes -i <private_key_path> -p 8022 <termux_user>@127.0.0.1
 |-- CODE_OF_CONDUCT.md
 |-- LICENSE
 |-- .gitignore
+|-- .gitattributes
+|-- .editorconfig
 |-- agents/
 |   `-- openai.yaml
 |-- assets/
-|   `-- icon.svg
+|   |-- icon.svg
+|   |-- android-termux-ssh-bootstrap.svg
+|   `-- social-card.svg
 |-- scripts/
 |   `-- validate-skill.ps1
 `-- .github/
@@ -89,34 +101,53 @@ ssh -o IdentitiesOnly=yes -i <private_key_path> -p 8022 <termux_user>@127.0.0.1
 
 - Windows host with PowerShell
 - Android device connected by USB
-- the user can unlock the phone and approve prompts
+- user can unlock the phone and approve prompts
 - GitHub-release Termux is acceptable
 - public-key authentication is preferred over password automation
 
-If the GitHub Termux build is not available, the non-interactive `run-as com.termux` path no longer applies cleanly.
+If the GitHub Termux build does not expose the expected `run-as com.termux` behavior, the non-interactive path must be treated as unavailable and the workflow needs to fall back to a more manual setup path.
 
 ## Validation
 
-This repository includes a structural validator:
+This repository includes both a local validator and a GitHub Actions workflow.
+
+Run locally:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\validate-skill.ps1
 ```
 
-The validator checks:
+The checks cover:
 
 - required public-facing files exist
 - `SKILL.md` frontmatter is present and coherent
 - `agents/openai.yaml` includes the expected interface metadata
 - icon references resolve to real files
 - the default prompt references `$android-termux-ssh-bootstrap`
-- the language switch links stay intact
+- both README files contain language-switch links
 
 ## Why GitHub Termux Builds
 
-This skill intentionally prefers the official GitHub Termux build because it is suitable for `run-as com.termux` driven setup on Windows. That makes ADB-assisted, non-interactive bootstrapping viable in a way that generic sideloading guidance does not.
+This skill intentionally prefers the official GitHub Termux build because the workflow is designed around validating and using `run-as com.termux` for ADB-assisted setup on Windows. That is a runtime gate, not a timeless guarantee, so the skill explicitly validates it before relying on it.
 
-It also means this repo is not trying to be a universal Termux guide. It is a focused operator skill.
+This also means the repo is not trying to be a universal Termux guide. It is a focused operator skill for one concrete Windows + Android + USB + SSH path.
+
+## Scope Boundaries
+
+### Included
+
+- Windows + Android USB flow
+- GitHub-release Termux path
+- HyperOS / Xiaomi manual install fallback
+- SSH key setup
+- proof that the final shell is actually Termux
+
+### Not Included
+
+- Google Play Termux workflows
+- root-only Android modifications
+- generic Linux SSH server setup unrelated to Termux
+- claims of full automation on devices that still require manual security confirmation
 
 ## References
 
@@ -124,3 +155,7 @@ It also means this repo is not trying to be a universal Termux guide. It is a fo
 - [README.ja.md](./README.ja.md)
 - [Termux app repository](https://github.com/termux/termux-app)
 - [Termux releases](https://github.com/termux/termux-app/releases)
+
+## License
+
+This repository is released under the [MIT License](./LICENSE).
