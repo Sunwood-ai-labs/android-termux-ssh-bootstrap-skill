@@ -19,39 +19,45 @@ Codex skill for taking a fresh Android device to a usable Termux SSH shell from 
 
 <p align="center">
   <a href="./README.md"><strong>English</strong></a>
-  |
-  <a href="./README.ja.md"><strong>Japanese</strong></a>
+  ·
+  <a href="./README.ja.md"><strong>日本語</strong></a>
 </p>
 
 ## Overview
 
-This repository packages a reusable Codex skill, `android-termux-ssh-bootstrap`, for one narrow but painful workflow:
+This repository packages a reusable Codex skill, `android-termux-ssh-bootstrap`, for one focused operator workflow:
 
 - prepare ADB on Windows
 - install the official GitHub Termux build
 - handle Xiaomi / HyperOS install restrictions
-- use `run-as com.termux` on the debuggable GitHub build when available
+- validate whether `run-as com.termux` is usable on the installed build
 - install `openssh`
 - configure public-key authentication
 - connect to Termux over `ssh` through `adb forward`
 
-The repository is intentionally README-centric. This workflow is linear and operational, so a strong skill file plus clear validation is a better fit than a docs site.
+The repository is intentionally README-centric. The workflow is linear and operational, so a strong `SKILL.md` plus repository validation is a better fit than a separate docs site.
 
 ## Quick Start
 
-### 1. Link the skill into Codex on Windows
+### 1. Clone the repository
 
 ```powershell
-New-Item -ItemType Junction -Path "$env:USERPROFILE\.codex\skills\android-termux-ssh-bootstrap" -Target "<local_repo_path>"
+git clone https://github.com/Sunwood-ai-labs/android-termux-ssh-bootstrap-skill.git
 ```
 
-### 2. Invoke it from Codex
+### 2. Link the skill into Codex on Windows
+
+```powershell
+New-Item -ItemType Junction -Path "$env:USERPROFILE\.codex\skills\android-termux-ssh-bootstrap" -Target "<local_repo_path>\\android-termux-ssh-bootstrap-skill"
+```
+
+### 3. Invoke it from Codex
 
 ```text
 Use $android-termux-ssh-bootstrap to get this fresh Android phone to a usable Termux SSH shell from Windows.
 ```
 
-### 3. Expected end state
+### 4. Expected end state
 
 ```powershell
 adb forward tcp:8022 tcp:8022
@@ -77,9 +83,9 @@ The repository name is for GitHub distribution. The `$skill` name is what Codex 
 |-- SECURITY.md
 |-- CODE_OF_CONDUCT.md
 |-- LICENSE
-|-- .gitignore
-|-- .gitattributes
 |-- .editorconfig
+|-- .gitattributes
+|-- .gitignore
 |-- agents/
 |   `-- openai.yaml
 |-- assets/
@@ -105,7 +111,7 @@ The repository name is for GitHub distribution. The `$skill` name is what Codex 
 - GitHub-release Termux is acceptable
 - public-key authentication is preferred over password automation
 
-If the GitHub Termux build does not expose the expected `run-as com.termux` behavior, the non-interactive path must be treated as unavailable and the workflow needs to fall back to a more manual setup path.
+If the installed GitHub Termux build does not expose the expected `run-as com.termux` behavior, the non-interactive path must be treated as unavailable and the workflow needs to fall back to a more manual setup path.
 
 ## Validation
 
@@ -122,7 +128,7 @@ The checks cover:
 - required public-facing files exist
 - `SKILL.md` frontmatter is present and coherent
 - `agents/openai.yaml` includes the expected interface metadata
-- icon references resolve to real files
+- icon references resolve to the tracked SVG assets
 - the default prompt references `$android-termux-ssh-bootstrap`
 - both README files contain language-switch links
 

@@ -59,6 +59,10 @@ if ($yaml -notmatch 'default_prompt:\s+"Use \$android-termux-ssh-bootstrap') {
     Write-Error "agents/openai.yaml default_prompt does not reference `$android-termux-ssh-bootstrap."
 }
 
+if ($readme -notmatch '\./assets/icon\.svg' -or $readmeJa -notmatch '\./assets/icon\.svg') {
+    Write-Error "README icon references are missing or wrong."
+}
+
 if ($readme -notmatch 'README\.ja\.md' -or $readmeJa -notmatch 'README\.md') {
     Write-Error "README language switch links are missing."
 }
