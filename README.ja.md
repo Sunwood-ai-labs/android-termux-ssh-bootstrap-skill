@@ -48,7 +48,7 @@ git clone https://github.com/Sunwood-ai-labs/android-termux-ssh-bootstrap-skill.
 ### 2. Windows の Codex skills にリンクする
 
 ```powershell
-New-Item -ItemType Junction -Path "$env:USERPROFILE\.codex\skills\android-termux-ssh-bootstrap" -Target "<local_repo_path>\\android-termux-ssh-bootstrap-skill"
+New-Item -ItemType Junction -Path "$env:USERPROFILE\.codex\skills\android-termux-ssh-bootstrap" -Target "<repo_clone_path>"
 ```
 
 ### 3. Codex から呼び出す
